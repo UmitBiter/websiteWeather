@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const timeElement = document.getElementById("time");
 
     // Hava durumu verilerini güncellemek için kullanılacak aralık (milisaniye cinsinden)
-    const refreshInterval = 300000; // Örnek: 5 dakika
+    const refreshInterval = 1000;
 
-    let apiKey = "cc53167f4c0d4a9597e111307232210"; // WeatherAPI.com'dan aldığınız API anahtarını buraya ekleyin
+    let apiKey = "API_KEY"; // WeatherAPI.com'dan aldığınız API anahtarını buraya ekleyin
     let updateIntervalId;
 
     searchForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        apiKey = "cc53167f4c0d4a9597e111307232210"; // API anahtarını güncelleyin
+        apiKey = "API_KEY"; // API anahtarını güncelleyin
         clearInterval(updateIntervalId); // Önceki setInterval işlemini temizle
         updateWeatherData();
         
