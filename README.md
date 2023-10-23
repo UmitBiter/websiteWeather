@@ -29,7 +29,7 @@ Bu uygulama aşağıdaki teknolojileri kullanır:
 
 ## Ekran Görüntüsü
 
-![Hava Durumu Uygulaması Ekran Görüntüsü](screenshot.png)
+![Hava Durumu Uygulaması Ekran Görüntüsü](https://cdn.discordapp.com/attachments/942398347522764891/1166033086392320080/image.png)
 
 ## Katkıda Bulunma
 
