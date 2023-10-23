@@ -1,0 +1,165 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(./bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+.weather-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    width: 450px;
+    height: auto;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#search-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-form i {
+    font-size: 2rem;
+}
+
+.i {
+    color: red;
+    filter: drop-shadow(0 0 2px black);
+}
+
+#search-form input {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 2px white;
+    outline: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+#search-form input:hover,
+input:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#search-form button {
+    color: #fff;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+#search-form button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.ust {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+#temperature {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#condition {
+    font-size: 1.2rem;
+}
+
+.alt {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    gap: 3rem;
+}
+
+.alt i {
+    font-size: 1.5rem;
+    padding-right: 5px;
+}
+
+.icon-p {
+    margin-left: 22px;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    .weather-container {
+        width: 100%;
+        padding: 1rem;
+    }
+
+
+    #search-form {
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #search-form i {
+        font-size: 1.5rem;
+    }
+
+    #search-form input {
+        font-size: 1.5rem;
+    }
+
+    #search-form button {
+        position: absolute;
+        right: 1rem;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+}

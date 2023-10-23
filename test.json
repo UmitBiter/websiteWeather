@@ -1,0 +1,41 @@
+{
+    "location": {
+        "name": "Istanbul",
+        "region": "Istanbul",
+        "country": "Turkey",
+        "lat": 41.02,
+        "lon": 28.96,
+        "tz_id": "Europe/Istanbul",
+        "localtime_epoch": 1697973349,
+        "localtime": "2023-10-22 14:15"
+    },
+    "current": {
+        "last_updated_epoch": 1697972400,
+        "last_updated": "2023-10-22 14:00",
+        "temp_c": 23.0,
+        "temp_f": 73.4,
+        "is_day": 1,
+        "condition": {
+            "text": "Sunny",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            "code": 1000
+        },
+        "wind_mph": 8.1,
+        "wind_kph": 13.0,
+        "wind_degree": 230,
+        "wind_dir": "SW",
+        "pressure_mb": 1017.0,
+        "pressure_in": 30.03,
+        "precip_mm": 0.0,
+        "precip_in": 0.0,
+        "humidity": 61,
+        "cloud": 0,
+        "feelslike_c": 24.4,
+        "feelslike_f": 75.9,
+        "vis_km": 10.0,
+        "vis_miles": 6.0,
+        "uv": 6.0,
+        "gust_mph": 6.8,
+        "gust_kph": 10.9
+    }
+}
