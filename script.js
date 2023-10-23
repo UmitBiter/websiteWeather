@@ -1,35 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // HTML elementlerine erişim için değişkenleri tanımla
-    const searchForm = document.getElementById("search-form"); // Arama formu
-    const cityInput = document.getElementById("city-input"); // Şehir giriş kutusu
-    const imgContainer = document.getElementById("img"); // Hava durumu ikonu
-    const humidityElement = document.getElementById("humidity"); // Nem bilgisi
-    const windElement = document.getElementById("wind"); // Rüzgar bilgisi
-    const errorElement = document.getElementById("error-message"); // Hata mesajı
-    const timeElement = document.getElementById("time"); // Güncelleme zamanı
+    const searchForm = document.getElementById("search-form");
+    const cityInput = document.getElementById("city-input");
+    const imgContainer = document.getElementById("img");
+    const humidityElement = document.getElementById("humidity");
+    const windElement = document.getElementById("wind");
+    const errorElement = document.getElementById("error-message");
+    const timeElement = document.getElementById("time");
 
     // Hava durumu verilerini güncellemek için kullanılacak aralık (milisaniye cinsinden)
     const refreshInterval = 300000; // Örnek: 5 dakika
 
-    // Hava durumu verilerini çekmek için kullanılacak API anahtarı
-    let apiKey = "API_KEY"; // WeatherAPI.com'dan aldığınız API anahtarını buraya ekleyin
+    let apiKey = "cc53167f4c0d4a9597e111307232210"; // WeatherAPI.com'dan aldığınız API anahtarını buraya ekleyin
+    let updateIntervalId;
 
-    let updateIntervalId; // Hava durumu verilerini düzenli aralıklarla güncellemek için kullanılacak zamanlayıcı
-
-    // Arama formunun gönderilme olayını dinle
     searchForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Sayfanın yeniden yüklenmesini önle
-        apiKey = "API_KEY"; // API anahtarını güncelle
+        event.preventDefault();
+        apiKey = "cc53167f4c0d4a9597e111307232210"; // API anahtarını güncelleyin
         clearInterval(updateIntervalId); // Önceki setInterval işlemini temizle
-        updateWeatherData(); // Hava durumu verilerini güncelle
+        updateWeatherData();
         
         // Belirli bir aralıkta hava durumu verilerini güncellemek için setInterval kullan
         updateIntervalId = setInterval(updateWeatherData, refreshInterval);
     });
 
-    // Hava durumu verilerini güncellemek için kullanılan işlev
     function updateWeatherData() {
-        const city = cityInput.value; // Kullanıcının girdiği şehir adını al
+        const city = cityInput.value;
         const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=tr&aqi=no`;
 
         fetch(apiUrl)
@@ -44,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("wind").textContent = "";
                     imgContainer.innerHTML = "";
                 } else {
-                    // Hava durumu verilerini çıkar
                     const temperatureC = data.current.temp_c;
                     const condition = data.current.condition.text;
                     const img = data.current.condition.icon;
@@ -52,9 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     const wind = data.current.wind_kph;
                     const time = new Date().toLocaleString('tr-TR', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
 
-                    errorElement.textContent = ""; // Hata mesajını temizle
+                    errorElement.textContent = "";
 
-                    // HTML elementlerine hava durumu verilerini ekle
                     document.getElementById("temperature").textContent = `${temperatureC}°C`;
                     document.getElementById("condition").textContent = `${condition}`;
                     document.getElementById("humidity").innerHTML = `<i class="fa-solid fa-droplet"></i> ${humidity}% <br> <span class="icon-p">Nem</span>`;
